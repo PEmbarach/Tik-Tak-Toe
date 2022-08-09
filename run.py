@@ -76,3 +76,47 @@ def check_winner(grid, player):
             return 2
 
     return 0
+
+number_of_moves = 0 # Variable of number of moves used to not let players exceed the number of valid moves.
+
+while True: 
+    """
+    Game logic, request for Player input, generate a random choice for the CPU, 
+    print the symbol at the chosen location and update the grid.
+    """
+    choice = int(input("\nPlayer, make your choice "))
+    valid_number()
+    while grid[choice -1] != "_":
+        print("\nCheck the Grid. Invalid option!\n")
+        print_grid(grid)
+        choice = int(input("\nPlayer, make your choice \n"))
+        valid_number()
+
+    grid[choice - 1] = "X"
+    number_of_moves += 1
+    winner = check_winner(grid, "X")
+    if winner !=0:
+        break
+
+    if number_of_moves == 9:
+        break
+    print_grid(grid)
+
+    computer_choice = random.randint(1, 9)
+    while grid[computer_choice -1] != "_":
+        computer_choice = random.randint(1, 9)
+
+    grid[computer_choice - 1] = "O"
+    number_of_moves += 1
+    winner = check_winner(grid, "O")
+
+    print_grid(grid)
+
+if winner == 1:
+    print("Congrats! You win")
+elif winner == 2:
+   print("Sorry, you lost")
+else:
+   print("Draw! No one won")
+
+print_grid(grid)
