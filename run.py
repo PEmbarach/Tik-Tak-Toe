@@ -83,7 +83,8 @@ def check_winner(grid, player):
 
     return 0
 
-number_of_moves = 0  """ariable of number of moves used to not
+number_of_moves = 0  
+"""ariable of number of moves used to not
 let players exceed the number of valid moves."""
 
 
@@ -106,7 +107,7 @@ while True:
     print the symbol at the chosen location and update the grid.
     """
 
-    choice = int(input("\nPlayer, make your choice "))
+    choice = int(input("\nPlayer, make your choice \n"))
     valid_number()
     while grid[choice - 1] != "_":
         print("\nCheck the Grid. Invalid option!\n")
