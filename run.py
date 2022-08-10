@@ -79,6 +79,17 @@ def check_winner(grid, player):
 
 number_of_moves = 0 # Variable of number of moves used to not let players exceed the number of valid moves.
 
+def valid_number():
+    """
+    Foundation ensures that a number greater than 9 is not used and fixing the bug.
+    """
+    global choice
+    while choice -1 >= 10:
+        print("\nInvalid number! Check a valid number on the Grid.\n")
+        print_grid(grid)
+        choice = int(input("\nPlayer, make your choice \n"))
+
+
 while True: 
     """
     Game logic, request for Player input, generate a random choice for the CPU, 
