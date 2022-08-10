@@ -108,7 +108,6 @@ while True:
     """
 
     choice = int(input("\nPlayer, make your choice \n"))
-    valid_number()
     while grid[choice - 1] != "_":
         print("\nCheck the Grid. Invalid option!\n")
         print_grid(grid)

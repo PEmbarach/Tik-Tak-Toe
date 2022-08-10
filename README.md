@@ -1,31 +1,130 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# TikTakToe
+<br>
+Project developed for the Full Stack Developer - Code Institute course, using Python 3 to build a game.
+<br>
+<br>
+Tic-tac-toe or noughts and crosses is a game for two players who take turns marking the spaces in a three-by-three grid with X or O. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. 
+<br>
+In this game the player will play against an AI. But in future updates it will be possible to play against someone else.
+<br>
+<br>
 
-Welcome Pablo Embarach,
+[Here is a live version of my project.](https://tik-tak-toe1.herokuapp.com/)
+<br>
+<br>
+<img src="assets/images/tik-tak-toe_Mockup.png">
+<br>
+<br>
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## How to play
+<br>
 
-## Reminders
+Tic-tac-toe is played on a three-by-three grid by two players, who alternately place the marks X and O in one of the nine spaces in the grid. You can also learn more about it on [Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe).
+<br>
+In this version the player will always make the first move with X, followed by a random CPU move with O. This will be until there is a winner or a tie, which is when all 9 spaces have already been filled and no one has managed to form a straight of 3.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+<br>
+<br>
 
-## Creating the Heroku app
+## Features
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+<br>
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Existing Features
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+<br>
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+* #### Board indication
+  
+  - At the beginning of the game, a board is presented with the values of their respective positions, ranging from 1 to 9, and a empty board.
+<br>
+  <img src="assets/images/board.png">
+  <br>
+  <br>
 
-Connect your GitHub repository and deploy as normal.
+* #### Automatic indicators
+  
+  - When you start the game, making your first choice, the board will be updated, indicating your play and which options are free. The same will happen automatically after the CPU plays
+  - Play against the computer
+  - Accepts user input
+  <br>
+  <img src="assets/images/after_moves.png">
+  <br>
+  <br>
 
-## Constraints
+* #### Input validation and error-checking
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+  - You cannot enter a valou outside of the board grid
+        <br>
+  <img src="assets/images/invalid_guess.png">
+  <br>
+  - You must enter numbers
+        <br>
+  <img src="assets/images/same_guess.png">
+  <br>
+  - You cannot enter the same guess twice
+      <br>
+  <img src="assets/images/same_guess.png">
+  <br>
+  - You cannot enter the same CPU guess
+        <br>
+  <img src="assets/images/CPU_guess.png">
+<br>
+<br>
 
------
-Happy coding!
+* #### Future Features
+  - Have a two player option.
+  - Let the player select difficulty levels against the CPU.
+  - Let the player select who starts playing.
+<br>
+<br>
+
+
+[Back to the top](#tiktaktoe)
+<br>
+<br>
+
+## Testing
+<br>
+I have manually tested this project by doing the following:
+<br>
+<br> 
+
+  - Passed the code through a PEP8 linter and confirmed there are no problems
+  - Given invalid inputs: out of bounds inputs, same input twice
+  - Tested in my local terminal and the Code Institute Heroku terminal.
+
+<br>
+
+## Bugs
+### Solves Bugs
+- When I wrote the code, when entering a value above the number of positions, it broke, making it impossible to continue. With the implementation of the function `valid_number()` this bug was solved.
+
+### Unfixed Bugs
+- No unfixed bugs
+<br>
+
+### Validator Testing
+- PEP8
+  - No errors were returned from PEP8online.com
+<br> 
+
+## Deployment
+<br>
+This project was deployed using Code Institute's mock terminal for Heroku.
+<br>
+
+- Steps for deployment:
+ - Fork or clone this repository
+ - Create a new Heroku app
+ - Set the buildbacks to `pytho` and `NodeJS`in that order
+ - Link the Heroku app to the repositoryß
+ - Click on ***Deploy***
+<br>
+
+## Credits
+- Code Institute for the deployment terminal
+- Wikipedia for the details of the Tik Tak Toe game
+<br>
+
+[Back to the top](#Jokenpô)
