@@ -84,7 +84,7 @@ def check_winner(grid, player):
     return 0
 
 number_of_moves = 0  
-"""ariable of number of moves used to not
+"""variable of number of moves used to not
 let players exceed the number of valid moves."""
 
 
@@ -94,11 +94,12 @@ def valid_number():
     greater than 9 is not used and fixing the bug.
     """
     global choice
+    choice = int(input("\nPlayer, make your choice \n"))
     while choice - 1 >= 10:
         print("\nInvalid number! Check a valid number on the Grid.\n")
         print_grid(grid)
         choice = int(input("\nPlayer, make your choice \n"))
-
+    
 while True:
 
     """
@@ -108,11 +109,13 @@ while True:
     """
 
     choice = int(input("\nPlayer, make your choice \n"))
+
+    valid_number()
+
     while grid[choice - 1] != "_":
         print("\nCheck the Grid. Invalid option!\n")
         print_grid(grid)
         choice = int(input("\nPlayer, make your choice \n"))
-        valid_number()
 
     grid[choice - 1] = "X"
     number_of_moves += 1
