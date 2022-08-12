@@ -14,27 +14,13 @@ print("\n")
 
 
 def print_grid(grid):
-
-    """
-    This function is a function that creates
-    the number of spaces and formats the grid.
-    """
-
     print("\nGrid Status\n")
-    for index in range(len(grid)):
+    for index in range (len(grid)):
         print(grid[index], end=" ")
         if index == 2 or index == 5 or index == 8:
             print (" ")
 
-grid = ["_"] * 9  # Set number of spaces in the grid
-
-
 def check_winner(grid, player):
-
-    """
-    This function checks for a winner
-    """
-
     # Check lines
     if grid[0] == player and grid[1] == player and grid[2] == player:
         if player == "X":
@@ -83,52 +69,40 @@ def check_winner(grid, player):
 
     return 0
 
-number_of_moves = 0  
-"""variable of number of moves used to not
-let players exceed the number of valid moves."""
+number_of_moves = 0
 
+grid = ["_"] * 9
 
 def valid_number():
-    """
-    Foundation ensures that a number
-    greater than 9 is not used and fixing the bug.
-    """
     global choice
-    choice = int(input("\nPlayer, make your choice \n"))
-    while choice - 1 >= 10:
+    while choice -1 >= 10:
         print("\nInvalid number! Check a valid number on the Grid.\n")
         print_grid(grid)
         choice = int(input("\nPlayer, make your choice \n"))
-    
+
 while True:
-
-    """
-    Game logic, request for Player input,
-    generate a random choice for the CPU,
-    print the symbol at the chosen location and update the grid.
-    """
-
-    choice = int(input("\nPlayer, make your choice \n"))
-
+    choice = int(input("\nPlayer, make your choice "))
     valid_number()
-
-    while grid[choice - 1] != "_":
+    while grid[choice -1] != "_":
         print("\nCheck the Grid. Invalid option!\n")
         print_grid(grid)
         choice = int(input("\nPlayer, make your choice \n"))
+        valid_number()
 
     grid[choice - 1] = "X"
     number_of_moves += 1
     winner = check_winner(grid, "X")
-    if winner != 0:
+    if winner !=0:
         break
 
     if number_of_moves == 9:
         break
     print_grid(grid)
 
+
+
     computer_choice = random.randint(1, 9)
-    while grid[computer_choice - 1] != "_":
+    while grid[computer_choice -1] != "_":
         computer_choice = random.randint(1, 9)
 
     grid[computer_choice - 1] = "O"
@@ -140,8 +114,8 @@ while True:
 if winner == 1:
     print("Congrats! You win")
 elif winner == 2:
-    print("Sorry, you lost")
+   print("Sorry, you lost")
 else:
-    print("Draw! No one won")
+   print("Draw! No one won")
 
 print_grid(grid)
