@@ -12,6 +12,7 @@ print("4 5 6")
 print("7 8 9")
 print("\n")
 
+break_line = [2,5,8]
 
 def print_grid(grid):
     """
@@ -20,9 +21,9 @@ def print_grid(grid):
     print("\nGrid Status\n")
     for index in range (len(grid)):
         print(grid[index], end=" ")
-        if index == 2 or index == 5 or index == 8:
+        if index == break_line[0] or index == break_line[1] or index == break_line[2]:
             print (" ")
-
+            
 grid = ["_"] * 9 # Set number of spaces in the grid
 
 def check_winner(grid, player):
