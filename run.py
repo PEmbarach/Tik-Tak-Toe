@@ -14,13 +14,22 @@ print("\n")
 
 
 def print_grid(grid):
+    """
+    This function is a function that creates the number of spaces and formats the grid.    
+    """
     print("\nGrid Status\n")
     for index in range (len(grid)):
         print(grid[index], end=" ")
         if index == 2 or index == 5 or index == 8:
             print (" ")
 
+grid = ["_"] * 9 # Set number of spaces in the grid
+
 def check_winner(grid, player):
+    """
+    This function checks for a winner
+    """
+
     # Check lines
     if grid[0] == player and grid[1] == player and grid[2] == player:
         if player == "X":
@@ -69,25 +78,31 @@ def check_winner(grid, player):
 
     return 0
 
-number_of_moves = 0
+number_of_moves = 0 # Variable of number of moves used to not let players exceed the number of valid moves.
 
-grid = ["_"] * 9
+while True: 
+    """
+    Game logic, request for Player input, generate a random choice for the CPU, 
+    print the symbol at the chosen location and update the grid.
+    """
+    while True:
+        try:
 
-def valid_number():
-    global choice
-    while choice -1 >= 10:
-        print("\nInvalid number! Check a valid number on the Grid.\n")
-        print_grid(grid)
-        choice = int(input("\nPlayer, make your choice \n"))
+            choice = int(input("\nPlayer, make your choice "))
 
-while True:
-    choice = int(input("\nPlayer, make your choice "))
-    valid_number()
-    while grid[choice -1] != "_":
-        print("\nCheck the Grid. Invalid option!\n")
-        print_grid(grid)
-        choice = int(input("\nPlayer, make your choice \n"))
-        valid_number()
+            if choice in range(1,10):
+                if grid[choice - 1] == "_":
+                    grid[choice - 1] = choice - 1
+                    break
+                else:
+                    print("\nCheck the Grid. Invalid option!\n")
+                    print_grid(grid)
+            else:
+                print("\nCheck the Grid. Invalid option!\n")
+                print_grid(grid)
+        except ValueError:
+            print("\nCheck the Grid. Invalid option!\n")
+
 
     grid[choice - 1] = "X"
     number_of_moves += 1
@@ -99,15 +114,16 @@ while True:
         break
     print_grid(grid)
 
-
-
     computer_choice = random.randint(1, 9)
     while grid[computer_choice -1] != "_":
         computer_choice = random.randint(1, 9)
 
     grid[computer_choice - 1] = "O"
     number_of_moves += 1
+    
     winner = check_winner(grid, "O")
+    if winner != 0:
+        break
 
     print_grid(grid)
 
