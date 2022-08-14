@@ -54,21 +54,35 @@ In this version the player will always make the first move with X, followed by a
 
 * #### Input validation and error-checking
 
+<br>
   - You cannot enter a valou outside of the board grid
-        <br>
+  <br>
+  <br>
   <img src="assets/images/invalid_guess.png">
   <br>
+  <br>
   - You must enter numbers
-        <br>
-  <img src="assets/images/only_numbers.png">
+  <br>
+  <br>
+  <img src="assets/images/only_number.png">
+  <br>
   <br>
   - You cannot enter the same guess twice
-      <br>
+  <br>
+  <br>
   <img src="assets/images/same_guess.png">
   <br>
+  <br>
   - You cannot enter the same CPU guess
-        <br>
+  <br>
+  <br>
   <img src="assets/images/CPU_guess.png">
+  <br>
+  <br>
+  - Play agin or quit game
+  <br>
+  <br>
+  <img src="assets/images/play_again.png">
 <br>
 <br>
 
@@ -98,7 +112,7 @@ I have manually tested this project by doing the following:
 
 ## Bugs
 ### Solves Bugs
-- When I wrote the code, when entering a value above the number of positions, it broke, making it impossible to continue. With the implementation of the function `valid_number()` this bug was solved.
+- When I wrote the code, when entering a value above the number of positions or a string or even a already played value, it broke, making it impossible to continue. When I change the choice input logic this bug was solved.
 
 ### Unfixed Bugs
 - No unfixed bugs
@@ -125,6 +139,7 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 ## Credits
 - Code Institute for the deployment terminal
 - Wikipedia for the details of the Tik Tak Toe game
+- A special thanks to my mentor [Martina](https://github.com/SephTheOverwitch), who helped me solve the bug and contributed ideas to improve the code.
 <br>
 
 [Back to the top](#Jokenpô)
