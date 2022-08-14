@@ -23,7 +23,7 @@ def print_grid(grid):
     print("\nGrid Status\n")
     for index in range(len(grid)):
         print(grid[index], end=" ")
-        if index == break_line[0] or index == break_line[1]
+        if index == break_line[0] or index == break_line[1]\
         or index == break_line[2]:
             print (" ")
 

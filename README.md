@@ -60,7 +60,7 @@ In this version the player will always make the first move with X, followed by a
   <br>
   - You must enter numbers
         <br>
-  <img src="assets/images/same_guess.png">
+  <img src="assets/images/only_numbers.png">
   <br>
   - You cannot enter the same guess twice
       <br>
